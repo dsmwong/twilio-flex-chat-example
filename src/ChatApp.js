@@ -26,10 +26,10 @@ class ChatApp extends Component {
   }
 
   componentDidMount() {
-    fetch('https://brass-chicken-6161.twil.io/chatToken', {
+    fetch('https://custom-chat-6571.twil.io/chat', {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       method: 'POST',
-      body: `identity=${encodeURIComponent(this.props.username)}`
+      body: `identity=${encodeURIComponent(this.props.username)}&chatServiceId=IS629d4132b00c40baaf68653b3da7c308`
     })
       .then(res => res.json())
       .then(data => Chat.create(data.token))

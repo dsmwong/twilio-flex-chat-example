@@ -18,10 +18,12 @@ class App extends Component {
   }
 
 createFlex(){
-  fetch('https://brass-chicken-6161.twil.io/createFlexChannel', {
+  const flexFlowSid = 'FOf60f57e420d826f506d1faa915dec6ba';
+  //const flexFlowSid = 'FO3823151c45ecdfd4837a5ffe2e46008b'
+  fetch('https://custom-chat-6571.twil.io/createFlexChannel', {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       method: 'POST',
-      body: `identity=${encodeURIComponent(this.state.username)}`
+      body: `identity=${encodeURIComponent(this.state.username)}&flexFlowSid=${flexFlowSid}`
     })
     .then(res => res.json())
     .then(data => this.setState({flexChannel: data.channel.sid}))
